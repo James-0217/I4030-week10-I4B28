@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairos 契機矩陣 | 互動焦慮的架構師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .matrix-bg { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
+        .orb-float { animation: float 8s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-30px); } }
+    </style>
+</head>
+<body class="bg-[#FDFBF7] text-slate-900 transition-colors duration-500 overflow-x-hidden">
+    <div id="matrix-container" class="fixed inset-0 -z-10 matrix-bg"></div>
+
+    <nav class="flex justify-between items-center p-8 max-w-5xl mx-auto">
+        <h1 class="text-xl font-bold tracking-tighter">KAIROS MATRIX</h1>
+    </nav>
+
+    <header class="py-24 px-8 text-center relative">
+        <h2 class="text-6xl md:text-8xl font-bold tracking-tighter mb-6 orb-float">讓 Kairos<br>解決你的 Chaos</h2>
+        <p class="text-lg text-slate-600 mb-10 max-w-xl mx-auto">以意圖工程編譯混亂，為活動籌備注入矩陣般的精準與清晰。</p>
+        <a href="#contact" class="px-8 py-3 bg-slate-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">立即諮詢</a>
+    </header>
+
+    <section class="py-16 px-8 max-w-3xl mx-auto text-center border-b border-slate-200">
+        <h3 class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">Founder Story</h3>
+        <p class="text-xl italic">「我選擇成為『互動焦慮的架構師』，運用同理心與 AI，將籌備時的混亂編譯為最具品味的互動體驗。」</p>
+    </section>
+
+    <section class="py-20 px-8 max-w-4xl mx-auto">
+        <h3 class="text-sm font-bold uppercase tracking-widest mb-6 text-slate-500">Why Kairos?</h3>
+        <p class="text-2xl font-medium tracking-tight">我不只是開發者，我是你的「互動焦慮架構師」。我不提供套版軟體，我提供的是能自動根據使用者意圖「演化」的動態架構。透過 AI 代理高速編譯，讓你的活動籌備期從「爭吵」變為「共識」。</p>
+    </section>
+
+    <section class="py-10 px-8 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-8 border border-slate-300 bg-white">
+                <svg class="w-8 h-8 mb-6 stroke-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <h4 class="font-bold mb-2">01. 意圖視覺化引擎</h4>
+                <p class="text-sm text-slate-500">將散亂點子化為球體，強迫團隊精煉意圖。</p>
+            </div>
+            <div class="p-8 border border-slate-300 bg-white">
+                <svg class="w-8 h-8 mb-6 stroke-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M3 15l6-6 4 4 7-7"/></svg>
+                <h4 class="font-bold mb-2">02. 動態熱度矩陣</h4>
+                <p class="text-sm text-slate-500">即時座標分析，讓共識一目了然。</p>
+            </div>
+            <div class="p-8 border border-slate-300 bg-white">
+                <svg class="w-8 h-8 mb-6 stroke-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2l6 6"/></svg>
+                <h4 class="font-bold mb-2">03. 意圖收斂報告</h4>
+                <p class="text-sm text-slate-500">產出最具執行力的決策分析報告。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-8 max-w-xl mx-auto">
+        <h3 class="text-sm font-bold uppercase tracking-widest mb-8 text-slate-500">Get Started</h3>
+        <form id="contactForm" class="space-y-4">
+            <input type="text" name="name" placeholder="姓名" required class="w-full p-4 bg-white border border-slate-300">
+            <input type="email" name="email" placeholder="Email" required class="w-full p-4 bg-white border border-slate-300">
+            <textarea name="message" placeholder="留言" required class="w-full p-4 bg-white border border-slate-300 h-32"></textarea>
+            <button type="submit" class="w-full p-6 bg-slate-900 text-white font-black uppercase text-xl tracking-widest hover:bg-slate-700 transition-all">SUBMIT INTENT</button>
+        </form>
+    </section>
+
+    <script>
+        const container = document.getElementById('matrix-container');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            container.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
+        });
+
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyEjxxwt_Jpdo2rL_s7MMpqwPuGBI4cq_7feEAuKA8wW18yX36ysje2CsbQ0VTW-8OyxQ/exec';
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = {
+                name: e.target.name.value,
+                email: e.target.email.value,
+                message: e.target.message.value
+            };
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(formData)
+            });
+            alert('意圖已送出，Kairos 收到！');
+        });
+    </script>
+</body>
+</html>
